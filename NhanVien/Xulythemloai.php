@@ -23,7 +23,7 @@
           $sql ="insert into LoaiHangHoa(TenLoaiHang) value('$Tenloai')";
         //  mysqli_query($conn, $sql);
           if(mysqli_query($conn, $sql))
-              echo("2");
+              echo("Thêm thành công!");
           else
               echo("Lỗi hệ thống");
 
