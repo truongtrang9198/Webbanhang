@@ -11,20 +11,8 @@ $(document).ready(function(){
       location.reload();
     })
   });
-  //  xoa hang hoa
-  $('#XoaHH').click(function(){
-    var mahang = $('#XoaHH').val();
-    var xacnhan = confirm("Bạn muốn xóa sản phẩm ra khỏi kho?");
-    if(xacnhan){
-      $.post("XulyxoaHH.php",{mahang:mahang},function(data){
-        alert(data);
-        location.reload();
-      })
-    }
-  });
 
-    // cap nhat anh
-
+  
 
 
 
