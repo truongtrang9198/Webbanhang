@@ -23,9 +23,7 @@ include("Ketnoi.php");
   if($n==0){
     $sql = "update NhanVien set HoTenNV='$hoten',ChucVu='$chucvu',DiaChi='$diachi',SDT='$sdt'";
     if(mysqli_query($conn,$sql)){
-      echo "Cập nhật thành công!";
-      
-  else
+        header("Location:index.php?action=quanlynhanvien");
     }else{
       echo "Thất bại!";
     }
