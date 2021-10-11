@@ -1,8 +1,8 @@
   <?php
   include("../Ketnoi.php");
   $n = "0";
-  $Maloai = $_GET['Maloai'];
-  $Tenloai = $_GET['Tenloai'];
+  $Maloai = $_GET['maloai'];
+  $Tenloai = $_GET['tenloai'];
 
 //    $tenloai = rtrim($tenloai, 'end');
   $tenloai1 = mb_strtolower($Tenloai, "utf8");
@@ -26,7 +26,7 @@
   //  mysqli_query($conn, $sql);
     if(mysqli_query($conn, $sql))
         echo("Thành công!");
-      
+    else
         echo("Lỗi hệ thống");
 
   }
