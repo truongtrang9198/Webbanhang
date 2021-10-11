@@ -25,9 +25,9 @@
        <div class="row">
          <!--  -->
          <div class="col-md-4">
-           <form class="form-group" method="post">
+           <form class="form-group" method="post" action="XulycapnhatNV.php">
                 <?php
-                  include("../Ketnoi.php");
+                  include("Ketnoi.php");
                   $sql ="select * from NhanVien where MSNV='$manv'";
                   $query = mysqli_query($conn,$sql);
                   if(mysqli_num_rows($query)!=0){
@@ -44,7 +44,7 @@
                     <label for="diachi">Địa chỉ</label>
                     <input type="text" class="form-control" name="diachi" id="diachi" value="<?php echo $row['DiaChi']; ?>"required>
                     <br>
-                    <button type="button" class="btn" name="button" id="btn-capnhat">Cập nhật</button>
+                    <button type="submit" class="btn" name="button">Cập nhật</button>
                     <button type="button" id="huy" name="button" class="btn" onclick="window.history.back();">Hủy</button>
                     <?php
                   }else{
