@@ -1,14 +1,18 @@
 create database Webbanhang;
 use Webbanhang;
-
+-- tao lai database Quanlydathang
+create database Quanlydathang;
+use Quanlydathang;
+ 
 create table Nhanvien(
-	MSNV char(5) primary key,
+	MSNV int primary key auto_increment,
     HoTenNV varchar(50) not null,
     ChucVu varchar(50),
     DiaChi varchar(100),
     SDT char(10),
     MatKhau varchar(32)
 );
+drop table NhanVien;
 
 create table KhachHang (
 	MSKH int primary key auto_increment,
@@ -37,28 +41,28 @@ create table HangHoa (
     Gia double not null,
     SoLuongHang int,
     MaLoaiHang int,
-    foreign key(MaLoaiHang) references LoaiHangHoa(MaLoaiHang)
+    foreign key(MaLoaiHang) references LoaiHangHoa(MaLoaiHang) on delete no action
 );
-
+drop table Hanghoa;
 
 create table HinhHangHoa (
 	MaHinh int primary key auto_increment,
     TenHinh varchar(50),
     MSHH int,
-    foreign key(MSHH) references HangHoa(MSHH)
+    foreign key(MSHH) references HangHoa(MSHH) on delete cascade
 );
 
 create table DatHang (
 	SoDonDH int primary key auto_increment,
     MSKH int,
-    MSNV char(5),
+    MSNV int,
     NgayDH datetime,
     NgayGH date,
     TrangThaiDH varchar(10),
-	constraint FK_Khachhang foreign key(MSKH) references KhachHang(MSKH),
-    constraint FK_Nhanvien foreign key(MSNV) references NhanVien(MSNV)
+	constraint FK_Khachhang foreign key(MSKH) references KhachHang(MSKH) on delete no action,
+    constraint FK_Nhanvien foreign key(MSNV) references NhanVien(MSNV) on delete no action
 );
-
+drop table DatHang;
 create table ChiTietDatHang(
 	SoDonDH int,
     MSHH int,
