@@ -20,17 +20,6 @@ $('#Sualoai').click(function(){
       alert("Bạn chưa nhập dữ liệu!");
     }
 });
-  //  xoa loai hang hoa
-$('#Xoaloai').click(function(){
 
-    var Maloai = $('#Xoaloai').val();
-    var Xacnhan = confirm("Bạn muốn xóa dữ liệu?");
-    if(Xacnhan){
-      $.get("Xulyxoaloai.php",{maloai:Maloai},function(thongbao){
-          alert(thongbao);
-          location.reload();
-      });
-    }
-  });
 
 })
