@@ -1,0 +1,54 @@
+
+  body{
+    background-color: #F5F5F5;
+  }
+  nav{
+    background-color: #7A8B8B;
+  }
+  .nav-item >a{
+    color: white;
+  }
+  .nav-item:hover{
+    background-color: #B4CDCD;
+  }
+  header a{
+    margin-left: 10px;
+
+  }
+  header{
+    background-color:#7A8B8B;
+    width: 100%;
+  }
+  #tiemkiem{
+    width: 500px;
+    margin-left:80px !important;
+    margin-top: 30px;
+    border: 1px solid;
+    border-color: white;
+  }
+  #ip-search{
+    width: 430px
+  }
+  #btn-search{
+    color: white;
+    background-color:#B4CDCD;
+    width:69px !important;
+  }
+  #menu{
+    color: white;
+  }
+  .nav-links{
+    color: white;
+  }
+  footer{
+    background-color:#7A8B8B;
+    width: 100%;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+/* màu btn */
+  .btn{
+    color: white;
+    background-color:#7A8B8B;
+  }
