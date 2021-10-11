@@ -25,9 +25,11 @@
        <div class="row">
          <!--  -->
          <div class="col-md-4">
-           <form class="form-group" action="XulycapnhatHH.php" method="get">
+           <button type="button" class="btn" data-toggle="collapse" href="#capnhatloai" name="button">Cập nhật loại</button>
+           <div class="collapse" id="capnhatloai">
              <label for="">Chọn loại hàng: </label>
               <select class="select" name="maloai" id="loaihang">
+                <option value="">Chọn loại hàng</option>
                  <?php
                  include("../Ketnoi.php");
                  $sql = "select * from LoaiHangHoa";
@@ -44,7 +46,12 @@
                      }
                   ?>
                 </select>
-                <br>
+                <button type="button" class="btn" name="button" id="btn-capnhatloai">Cập nhật</button>
+           </div>
+
+              <br>
+           <form class="form-group" action="XulycapnhatHH.php" method="get">
+
                 <?php
                   include("../Ketnoi.php");
                   $sql ="select * from HangHoa where MSHH='$mahang'";
@@ -63,7 +70,7 @@
                     <label for="soluong">Số lượng</label>
                     <input type="text" class="form-control" name="soluong" id="soluong" value="<?php echo $row['SoLuongHang']; ?>"required>
                     <br>
-                    <button type="submit" class="btn" name="button" >Cập nhật</button>
+                    <button type="submit" class="btn" name="button" id="btn-capnhat">Cập nhật</button>
                     <button type="button" id="huy" name="button" class="btn" onclick="window.history.back();">Hủy</button>
                     <?php
                   }else{
@@ -97,6 +104,7 @@
   $(document).ready(function(){
     $('#Taianh').click(function(){
         // var formData = new FormData($('#form-anh')[0]);
+
         if($('#hinhanh').val() !=''){
           var hinhanh = $("#hinhanh").val();
           var hinhanh1= hinhanh.slice(hinhanh.indexOf('.')+1,hinhanh.length);
@@ -128,6 +136,19 @@
         }
 
     });
+    // cap nhat loaihang
+    $('#btn-capnhatloai').click(function(){
+      var mahang = $('#mahang').val();
+      var maloai = $('#loaihang').val();
+      // alert(maloai);
+      if(maloai ==''){
+        alert('Loại hàng rỗng!');
+      }else{
+        $.post('Capnhatloai.php',{mahang:mahang,maloai:maloai},function(tt){
+          alert(tt);
+        });
+      }
+    })
 
   })
 </script>
