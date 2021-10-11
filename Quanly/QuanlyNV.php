@@ -60,8 +60,8 @@
         <td> <?php echo $row['ChucVu']; ?></td>
         <td> <?php echo $row['DiaChi']; ?></td>
         <td> <?php echo $row['SDT']; ?></td>
-        <td> <a href="#?id=<?php echo $row['MSNV']; ?>" class="btn" id="btn-SuaNV"><i class="fas fa-edit"></i></a> </td>
-        <td> <button  class="btn" value="<?php echo $row['MSNV']; ?>"  id="btn-Xoanv"><i class="far fa-trash-alt"></i></button> </td>
+        <td> <a href="SuaNV.php?id=<?php echo $row['MSNV']; ?>" class="btn" id="btn-SuaNV"><i class="fas fa-edit"></i></a> </td>
+        <td> <a href="XoaNV.php?id=<?php echo $row['MSNV']; ?>" class="btn" id="btn-SuaNV"><i class="far fa-trash-alt"></i></a> </td>
 
         <?php $n++;
       }
