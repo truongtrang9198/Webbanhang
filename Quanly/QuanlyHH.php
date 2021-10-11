@@ -63,8 +63,8 @@
         <td> <?php echo $row['Gia']; ?></td>
         <td> <?php echo $row['SoLuongHang']; ?></td>
         <td> <a href="SuaHH.php?id=<?php echo $row['MSHH']; ?>" class="btn"><i class="fas fa-edit"></i></button> </td>
-        <td> <button class="btn" value="<?php echo $row['MSHH']; ?>" id="XoaHH">
-          <i class="fas fa-trash-alt"></i></button> </td>
+        <td> <a href="XoaHH.php?id=<?php echo $row['MSHH']; ?>" class="btn">
+          <i class="fas fa-trash-alt"></i></a> </td>
         <?php $n++;
       }
     ?>
