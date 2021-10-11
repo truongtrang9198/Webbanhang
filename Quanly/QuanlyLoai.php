@@ -61,10 +61,10 @@
         <td><?php echo $n; ?></td>
         <td><?php echo $row['MaLoaiHang']; ?></td>
         <td><?php echo $row['TenLoaiHang']; ?></td>
-        <td> <button class="btn" value=" <?php echo $row['MaLoaiHang']; ?>" id="Sualoai">
-           <i class="fas fa-edit"></i></button> </td>
-           <td> <button class="btn" value=" <?php echo $row['MaLoaiHang']; ?>" id="Xoaloai">
-              <i class="far fa-trash-alt"></i></button> </td>
+        <td> <a href="Sualoai.php?id=<?php echo $row['MaLoaiHang']; ?>" class="btn">
+           <i class="fas fa-edit"></i></a> </td>
+           <td> <a href="Xoaloai.php?id=<?php echo $row['MaLoaiHang']; ?>" class="btn"  id="Xoaloai">
+              <i class="far fa-trash-alt"></i></a> </td>
         <?php $n++;
       }
     ?>
@@ -72,5 +72,6 @@
     </tbody>
 </table>
  </div>
+
 </body>
 </html>
