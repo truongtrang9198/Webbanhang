@@ -52,3 +52,10 @@
     color: white;
     background-color:#7A8B8B;
   }
+/*  Css cho trang toàn bộ sản phẩm                                                        */
+.toast{
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
