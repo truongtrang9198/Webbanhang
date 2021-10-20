@@ -26,6 +26,9 @@
             case 'dangky':
                 include 'Dangky.php';
                 break;
+            case 'giohang_tv':
+                include 'Giohang_tv.php';
+                break;
           }
 
        ?>
