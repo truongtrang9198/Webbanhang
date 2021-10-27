@@ -20,7 +20,7 @@ if(mysqli_num_rows($query) != 0){
   }
 }
 
-$sql = "insert into khachHang(HoTenKH,TenCongTy,SoDienThoai,SoFax,Passwd)
+$sql = "insert into KhachHang(HoTenKH,TenCongTy,SoDienThoai,SoFax,Passwd)
           values('$hoten','$tencty','$sdt','$sofax','$matkhau')";
   if(mysqli_query($conn,$sql)){
     echo("Thành công!");
