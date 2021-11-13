@@ -34,29 +34,3 @@ include_once("Ketnoi.php");
   </div>
 
 </div>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#form_dangky').submit(function(e){
-      e.preventDefault();
-      var hoten = $.trim($('#hoten').val());
-      var tencty = $.trim($('#tencty').val());
-      var sdt = $.trim($('#sdt_dk').val());
-      var sofax = $.trim($('#sofax').val());
-      var matkhau = $.trim($('#matkhau_dk').val());
-      var xc_matkhau = $.trim($('#xc_matkhau').val());
-      if(matkhau != xc_matkhau){
-        $('#matkhau_dk').css('border-color','red');
-        $('#xc_matkhau').css('border-color','red');
-      }else{
-        $.post("Xulydangky.php",{hoten:hoten,tencty,tencty,sdt:sdt,sofax:sofax,matkhau:matkhau},
-                              function(thongbao){
-            alert(thongbao);
-            if(thongbao == "Thành công!"){
-              location.href = "index.php?action=trangchu";
-            }
-          });
-      }
-    });
-  })
-</script>
