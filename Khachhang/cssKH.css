@@ -55,6 +55,7 @@
 /*  Css cho trang toàn bộ sản phẩm                                                        */
 .toast{
     background-color: white;
+    width: 300px;
     position: absolute;
     top: 0;
     right: 0;
