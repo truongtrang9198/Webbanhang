@@ -29,6 +29,21 @@
             case 'giohang_tv':
                 include 'Giohang_tv.php';
                 break;
+            case 'thanhtoan':
+                include 'Thanhtoan.php';
+                break;
+            case 'xulydathang':
+                include 'Xulydathang.php';
+                break;
+            case 'thanhcong':
+                include 'Thanhcong.php';
+                break;
+            case 'thanhtoan':
+                include 'Thanhtoan.php';
+                break;
+            default:
+                include 'Toanbosp.php';
+
           }
 
        ?>
