@@ -9,13 +9,33 @@
 
 <head>
   <meta charset="utf-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+  <!-- font asomeware libary -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+<!-- Latest compiled and minified CSS -->
+
   <link rel="stylesheet" href="cssKH.css">
+  <script src="Header_nav.js"></script>
   <title>Toto's Shop</title>
 
   <title></title>
@@ -73,55 +93,71 @@
     </ul>
     <!-- đang nhap - gio hang -->
     <ul class="navbar-nav ml-auto">
+      <!-- Nếu đã đăng nhập, hiển thị tên đăng nhập, và giỏ hàng đã được lưu trên server -->
       <?php
         if(isset($_SESSION['MSKH']) &&  isset($_SESSION['TenKH'])){
             ?>
-            <li class="nav-item">
+            <!-- Hiển thị tên đăng nhập, đăng xuất-->
+             <li class="nav-item">
               <div class="dropdown-left">
                 <a href="#" class="nav-links" id="usr-tuychon" data-toggle="dropdown">
                   <i style="font-size:25px;" class="fas fa-user"></i></a>
                 <div class="dropdown-menu">
-                  <a href="#" class="dropdown-item nav-link" data-toggle="modal" data-target="#formDangnhap"> <?php echo $_SESSION['TenKH']; ?> </a>
+                  <a href="#" class="dropdown-item nav-link"> <?php echo $_SESSION['TenKH']; ?> </a>
                   <a href="Dangxuat.php" id="dangxuat" class="dropdown-item nav-link">Đăng xuất</a>
 
                 </div>
               </div>
 
             </li>
+            &emsp;
+             <!-- Dropdown menu hiển thị giỏ hàng, thanh toán-->
+            <li class="nav-item">
+              <div class="dropdown-up">
+                <a href="#" class="nav-links" id="giohang-tuychon" data-toggle="dropdown">
+                  <i class="fas fa-shopping-basket" style="font-size:25px;"></i></a>
+                <div class="dropdown-menu">
+                  <a href="index.php?action=giohang_tv" class="nav-link dropdown-item" >Xem giỏ hàng</a>
+                  <a href="#" class="nav-link dropdown-item">Thanh toán</a>
+                </div>
+              </div>
+            </li>
 
           <?php
         }else{
           ?>
+          <!-- Nếu chưa đăg nhập, hiển thị đăng ký đăng nhập, và giỏ hàng lưu trong session -->
+          <!-- Hiển thị tên đăng nhập, đăng ký-->
           <li class="nav-item">
             <div class="dropdown-left">
               <a href="#" class="nav-links" id="usr-tuychon" data-toggle="dropdown">
                 <i style="font-size:25px;" class="fas fa-user"></i></a>
               <div class="dropdown-menu">
-                <a href="#" class="dropdown-item nav-link" data-toggle="modal" data-target="#formDangnhap">Đăng nhập</a>
+                <a href="#" class="dropdown-item nav-link" data-toggle="modal" data-target="#formDangnhap" id="dangnhap">Đăng nhập</a>
                 <a href="index.php?action=dangky" class="dropdown-item nav-link">Đăng ký</a>
 
               </div>
             </div>
 
           </li>
+          &emsp;
+          <!-- Dropdown menu hiển thị giỏ hàng, thanh toán-->
+          <li class="nav-item">
+            <div class="dropdown-up">
+              <a href="#" class="nav-links" id="giohang-tuychon" data-toggle="dropdown">
+                <i class="fas fa-shopping-basket" style="font-size:25px;"></i></a>
+              <div class="dropdown-menu">
+                <a href="#" class="nav-link dropdown-item" data-toggle="modal" data-target="#formDangnhap">Xem giỏ hàng</a>
+                <a href="#" class="nav-link dropdown-item">Thanh toán</a>
+              </div>
+            </div>
+          </li>
 
           <?php
         }
        ?>
 
-      &emsp;
-      <li class="nav-item">
-        <div class="dropdown-up">
-          <a href="#" class="nav-links" id="giohang-tuychon" data-toggle="dropdown">
-            <i class="fas fa-shopping-basket" style="font-size:25px;"></i></a>
-          <div class="dropdown-menu">
-            <a href="#" class="nav-link dropdown-item">Xem giỏ hàng</a>
-            <a href="#" class="nav-link dropdown-item">Thanh toán</a>
-          </div>
-        </div>
 
-
-      </li>
     </ul>
   </nav>
   <hr>
@@ -153,9 +189,10 @@
               </div>
               <input type="password" name="matkhau" id="matkhau" value="" class="form-control" placeholder="Mật khẩu" required>
             </div>
-
+            <p class="text-danger" id="Thongbaodangnhap"></p>
             <!-- submit button -->
             <div class="modal-footer">
+                <a href="index.php?action=dangky" class="nav-link">Đăng ký</a>
               <button type="submit" id="submit" class="btn" name="button" value="">Đăng Nhập</button>
             </div>
         </div>
@@ -165,28 +202,15 @@
   </div>
   <!-- Ket thuc form-dang nhap -->
   </div>
+  <!-- Toast thông báo -->
+  <div class="toast" id="Hienthithongbao" data-delay="3000">
+  <div class="toast-header">
+    <!-- <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button> -->
+  </div>
+  <div class="toast-body text-danger" id="toast-content">
+      <!-- Một sản phẩm được thêm vào giỏ hàng! -->
+  </div>
+</div>
+<!-- Kết thúc Toast -->
 </body>
 </html>
-<script type="text/javascript">
-  $(document).ready(function(){
-
-  $('#form_dn').submit(function(e){
-      e.preventDefault();
-      var sdt = $('#sdt').val();
-      var pwd = $('#matkhau').val();
-    //alert(sdt);
-
-      $.post("KiemtraDN.php",{sdt:sdt,pwd:pwd},function(data){
-        if(data =="True"){
-          $('#form_dn').unbind('submit');
-          $('#submit').click();
-        }
-         else {
-             alert(data);
-         }
-      });
- });
-
-
-  });
-</script>
